@@ -5,3 +5,6 @@ Run the application with the command:
 
 For example:
 `mvn clean compile exec:java -Dexec.args="http://localhost:8080 10"`
+
+
+The main class is **com.gigaspaces.learning.webcrawler.Main**

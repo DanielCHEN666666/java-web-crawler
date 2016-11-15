@@ -2,7 +2,6 @@ package com.gigaspaces.learning.webcrawler;
 
 /**
  * @author Yohana Khoury
- * @since 12.1
  */
 public class Main {
 
