@@ -43,7 +43,7 @@ public class Crawler {
         return seen.size();
     }
 
-    private void visit(final String link) {
+    private void handle(final String link) {
         if (seen.containsKey(link))
             return;
         seen.put(link, true);
@@ -52,7 +52,7 @@ public class Crawler {
             public void run() {
                 List<String> links = getLinksFromUrl(link);
                 for (String link : links) {
-                    visit(link);
+                    handle(link);
                 }
                 pending.decrementAndGet();
                 if (pending.get() == 0) {
@@ -101,7 +101,7 @@ public class Crawler {
     }
 
     public void start() {
-        visit(baseUrl);
+        handle(baseUrl);
     }
 
     public void join() {
