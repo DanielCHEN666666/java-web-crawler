@@ -44,7 +44,7 @@ public class App {
         queue.add(Arrays.asList("/"));
         n++;
         for (; n > 0; n--) {
-            final List<String> links = queue.poll(1000, TimeUnit.SECONDS);
+            final List<String> links = queue.take();
             for (final String link : links) {
                 if (seen.contains(link)) {
                     continue;
