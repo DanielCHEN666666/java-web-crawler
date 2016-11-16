@@ -13,4 +13,4 @@ You can run the v1/v2 mains via your IDE:
 - v2 main class: com.gigaspaces.learning.webcrawler.v2.Main
 
 ###Diagram for v2
-![alt text](v2-diagram.png)
+![Diagram for v2](v2-diagram.png)
