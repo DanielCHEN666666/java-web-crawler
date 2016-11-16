@@ -50,7 +50,10 @@ public class Crawler {
         pending.incrementAndGet();
         executorService.execute(new Runnable() {
             public void run() {
-                getLinksFromUrl(link);
+                List<String> links = getLinksFromUrl(link);
+                for (String link : links) {
+                    visit(link);
+                }
                 pending.decrementAndGet();
                 if (pending.get() == 0) {
                     synchronized (lock) {
@@ -67,7 +70,7 @@ public class Crawler {
         ArrayList<String> list = new ArrayList<String>(re.size());
         for (Element element : re) {
             String link = element.attributes().get("href");
-            visit(link);
+            list.add(link);
         }
         return list;
     }
