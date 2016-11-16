@@ -1,4 +1,5 @@
-package com.gigaspaces.learning.webcrawler;
+package com.gigaspaces.learning.webcrawler.v1;
+
 
 /**
  * @author Yohana Khoury
@@ -12,13 +13,13 @@ public class Main {
         }
         String baseUrl = args[0];
         int numOfThreads = Integer.parseInt(args[1]);
-        App app = new App(baseUrl, numOfThreads);
         System.out.println("Using " + numOfThreads + " threads to process " + baseUrl);
+        App app = new App(baseUrl, numOfThreads);
         long start = System.currentTimeMillis();
         app.start();
         long totalTimeInMS = System.currentTimeMillis() - start;
         app.shutdown();
-        System.out.println(app.getProcessedLinks() + " links processed in " + (double)totalTimeInMS/1000 + "s");
-    }
+        System.out.println(app.getProcessedLinks() + " links processed in " + (double) totalTimeInMS / 1000 + "s");
 
+    }
 }
